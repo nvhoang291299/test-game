@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- Navbar -->
+    <header class="container">
+        <div class="navbar"> 
+
+            <h1>ROCK<br/>PAPER<br/>SCISSORS</h1>
+            <div class="score-board">
+                <div class="score">
+                    <p class="score-title">PLAYER</p>
+                    <p id="user-score"></p>
+                </div>
+                <div class="score">
+                    <p>COMPUTER</p>
+                    <p id="comp-score">0</p>
+                </div>
+            </div>
+
+        </div>
+    </header>
+
+    <!-- Main content -->
+    <main class="container">
+        <div class="msg-container">
+            <p id="msg">Play your Move!</p>
+        </div>
+
+        <div class="result">
+            <img class="result-img" src="" alt="Computer Choice">
+        </div>
+
+        <div class="choices">
+            <div class="choice" id="Rock">
+                <img class="choice-image" src="../images/rock.png" alt="Rock">
+            </div>
+            <div class="choice" id="Paper">
+                <img class="choice-image" src="../images/paper.png" alt="Paper">
+            </div>
+            <div class="choice" id="Scissors">
+                <img class="choice-image" src="../images/scissors.png" alt="Scissors">
+            </div>
+        </div>
+
+    </main>
+    <script src="../build/mezon-web-sdk.js"></script>
+    <script src="./script.js"></script>
+    <script>
+        window.Mezon.WebView.receiveEvent('theme_changed', (eventType, eventData) => {
+            console.log(`Received event: ${eventType}`, eventData);
+        });
+    </script>
+</body>
+
+</html>
